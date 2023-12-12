@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Google Search!</title>
+        <link rel="icon" href=
+        "https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA"
+                  type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <style>
+               #icon{
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+                width:100px;
+                height:auto;
+                margin-top: -15px;
+                margin-bottom: 0px;
+                margin-left: 10px;
+                align-content: left;
+
+            }
+             .text{
+                text-align: left;
+                font-size: 20px;
+                margin-top: 20px;
+                margin-right:0px;
+                color:firebrick
+             }
+             #search_elements{
+                padding-left: 20px;
+             }
+        </style>
+    </head>
+    <body>
+        <div class="nav-item">
+            <img src="Images\social.png" alt="Google Icon" class="rounded float-left" id ="icon" >
+        </div>
+        <div   id ="links" class="nav justify-content-end">
+            <div class="nav-item">
+                <a class="nav-link active" href = "Images.html">Images Search</a>
+            </div >
+            <div  class="nav-item">
+                <img  class="nav-link disabled" src = "Images\apps.png", alt ="more options">
+            </div>
+        </div>
+        <div id = "search_elements">
+            <form action="https://google.com/search">
+                <h2 class = "text"  class = "d-flex justify-content-start">Advanced Search</h2>
+            <hr>
+                <h2 style= "font-size: 16px;margin-right:20px" class ="text-left">Find Pages with...</h2>
+                <div class="form-group row">
+                  <label for="fword"    class="col-sm-2 col-form-label d-flex justify-content-start">all these words:</label>
+                  <div >
+                    <input   style = "width: 500px;"class="form-control d-flex justify-content-start" type="text" name="as_q"><br>
+                  </div>
+                </div>
+              
+                <div class="form-group row">
+                  <label for="phword" class="col-sm-2 col-form-label d-flex justify-content-start">this exact word or phrase:</label>
+                  <div >
+                    <input  style = "width: 500px;" class="form-control d-flex justify-content-start" type="text" name="as_epq"><br>
+                  </div>
+                </div>
+              
+                <div class="form-group row">
+                  <label  for="aword" class="col-sm-2 col-form-label d-flex justify-content-start">any of these words:</label>
+                  <div class="input-lb">
+                    <input  style = "width: 500px;" class="form-control d-flex justify-content-start" type="text" name="as_oq"><br>
+                  </div>
+                </div>
+              
+                <div class="form-group row">
+                  <label  class="col-sm-2 col-form-label d-flex justify-content-start" for="nword">none of these words:</label>
+                  <div >
+                    <input  style = "width: 500px;" class="form-control d-flex justify-content-start" type="text"   name="as_eq"><br>
+                  </div>
+                </div>
+              
+                <div>
+                  <input class="btn btn-primary d-flex justify-content-start" type="submit" value="Advanced Search" aria-label="Advanced Search">
+                </div>
+              </form>
+              
+        </div>
+         
+    </body>
+<html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Google Search!</title>
+        <link rel="icon" href=
+        "https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA"
+                  type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <style>
+            .icon{
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+                width:280px;
+                height:auto;
+                margin-top: 40px;
+                margin-bottom: 0px;
+
+            }
+            input[type=text]{
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+                padding: 10px;  
+                width: 600px;  
+                border: 2px solid #ccc;  
+                border-radius:30px; 
+                outline: none; 
+            }
+            #buttons{
+                text-align: center;
+                margin: 40px;
+            }
+            #searchButton{
+                align-items: center;
+                padding: 10px;
+                margin-right: 10px;
+            }
+            #Ju_st{
+                align-items: center;
+                padding: 10px;
+                margin-right: 10px;
+            }
+            body{
+                overflow: hidden;
+            }
+            #links{
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div   id ="links" class="nav justify-content-end">
+            <div class="nav-item">
+                <a class="nav-link active" href = "Images.html">Images Search</a>
+            </div >
+            <div  class="nav-item">
+                <a class="nav-link active" href = "advanced.html">Advanced Search</a>
+            </div>
+            <div  class="nav-item">
+                <img class="nav-link disabled" src = "Images\apps.png", alt ="more options">
+            </div>
+        </div>
+        <img src="Images\social.png" alt="Google Icon" class ="icon" >
+        <form action="https://google.com/search" method="get"  id = "searchForm" autocomplete="off" >
+            <input type="text" name="q" class="btn-light" />
+        </form>
+        <div id = "buttons">
+            <button id="searchButton" class="btn btn-light btn-lg" type="submit" form="searchForm">Search</button>
+        <a href = "https://doodles.google/">
+            <button id = "Jus_t" type="button"   id = "Ju_st" class="btn btn-light btn-lg">I'm Feeling Lucky</button>
+        </a> 
+        </div>
+          
+         
+       
+    </body>
+<html>
