@@ -17,9 +17,14 @@ This project replicates the Google search experience with three main pages: Goog
 
 ## Screenshots
 
-![Google Search](images/google-search.png)
-![Google Image Search](images/google-image-search.png)
-![Google Advanced Search](images/google-advanced-search.png)
+### Google Search Page
+![Google Search](https://github.com/PranavAI2050/WEB_DEV/assets/123180829/df50969c-cbd6-44b3-a613-b3a75b8a1a08)
+
+### Google Advanced Search
+![Advanced Search](https://github.com/PranavAI2050/WEB_DEV/assets/123180829/f23e2aa2-2147-4a6c-8c65-3a2a511c54be)
+
+### Google Image Search
+![Image Search](https://github.com/PranavAI2050/WEB_DEV/assets/123180829/4bae82e8-773e-4ffb-9f31-1b710a4cd5f7)
 
 ## Tech Stack
 
