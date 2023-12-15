@@ -39,5 +39,5 @@ To experience the Google Clone on your own machine, follow these simple steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/google-clone.git
+   git clone https://github.com/PranavAI2050/WEB_DEV.git
   and Run the HTML file in your preferred web browser.
