@@ -2,6 +2,8 @@
 
 This repository contains a web application that serves as an encyclopedia, allowing users to create, edit, and explore entries. The application is built using Python and Django.
 
+https://github.com/PranavAI2050/WEB_DEV/assets/123180829/0b844e8f-3b1b-4477-8a79-cef4b8e2dc70
+
 ## Features
 
 ### Entry Page
@@ -36,18 +38,20 @@ Any Markdown content in an entry file is converted to HTML before being displaye
 
 1. Clone this repository.
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/PranavAI2050/WEB_DEV.git
    cd your-repo
-  ### Setting up a Virtual Environment
+  ### Setting up a Wiki  
 
 1. Open your terminal or command prompt.
 
 2. Navigate to your project directory.
    ```bash
-   cd path/to/your/wiki
-   python -m venv venv
-   .\venv\Scripts\activate
-3.Install requirements.txt
-4.Run in terminal.
+     cd path/to/your/wiki
+3.Create and activate Virtual env
+```bash
+     python -m venv venv
+     .\venv\Scripts\activate
+```
+4.Install requirements Run in terminal.
 ````bash
     python manage.py runserver
