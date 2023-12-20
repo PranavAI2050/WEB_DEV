@@ -1,0 +1,41 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    {% if edit == False %}
+    <h2 >Add Entry</h2>
+    {% else %}
+    <h2 >Edit Entry</h2>
+    {% endif %}
+    {% if message == False %}
+        <p class="alert alert-warning" role="alert">Please Enter valid title</p>
+    {% endif %}
+    {% if edit == True%}
+    <form action="{% url 'encyclopedia:edit' title=title %}", method = 'post'>
+    {% else %}
+    <form action="{% url 'encyclopedia:create' %}", method = 'post'>
+    {% endif %}
+        {% csrf_token %}
+        <div class="mb-3">
+            {% if edit == True %}
+            <label for="title" class="form-label">{{title}}</label>
+            {% else %}
+            <label for="title" class="form-label">Enter title</label>
+            <input type="text" class="form-control" name = "title" id="title" placeholder="Enter Title">
+            {% endif %}
+          </div>
+        <div class="mb-3" >
+            {% if edit == True %}
+            <label for="content" class="form-label">Edit the content Here:</label>
+            {% else %}
+            <label for="content" class="form-label">Write the content Here:</label>
+            {% endif %}
+            <textarea id="content" class="form-control" name="content" rows="4" cols="50">{{content}}</textarea>
+            </div>
+        <input type  = "submit" class="btn btn-primary mb-3">
+    </form>
+
+{% endblock %}
