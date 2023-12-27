@@ -1,0 +1,114 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %} 
+    <div class="container">
+    
+          {% if True %}
+              <div class="row mb-4">
+                  <div class="col-md-4">
+                      <img class="img-fluid" src="{{ listing.image }}" alt="{{ listing.title }}">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card">
+                          <div class="card-body">
+                              <h5 class="card-title">{{ listing.title }}</h5>
+                              <p class="card-text">{{ listing.description }}</p>
+                              <p class="card-text">{{ listing.bids }}</p>
+                          </div>
+                          <div class="card-body">
+                              {% for bid in listing.bid.all %}
+                                  {% if forloop.last %}
+                                      <p class="card-text">
+                                          <strong>The Current Higest Bid is : {{ bid.bid }} $</strong>
+                                      </p>
+                                  {% endif %}
+                              {% endfor %}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          {% endif %}
+          <hr>
+  </div>
+  {% if listing.active %}
+  {% if same_user %}
+  <form  style = "padding: 10px;" method="POST" action="{% url 'close' listing.id %}" id="removeListingForm">
+    {% csrf_token %}
+    <input style = "padding: 10px;"  type="hidden" name="listing_id" value="{{ listing.id }}">
+    <button class="btn btn-info btn-primary"  style = "padding: 10px;"  type="submit">Remove Listing</button>
+</form>
+{% endif %}
+{% if add %}
+{% if message_add %}
+<div class="alert alert-success" role="alert">
+  Successful added to your WatchList
+</div>
+{% else %}
+<div class="alert alert-info" role="alert">
+  Successful removed to your WatchList
+</div>
+{% endif %}
+{% endif %}
+    {% if  exist %}
+        <a style = "padding: 10px;" style = "padding: 20px;" href="{% url 'add' listing.id %}"><p style = "padding: 10px;" class="btn btn-info" >Remove from Watchlist</p></a>
+    {% else %}
+        <a style = "padding: 10px;" href="{% url 'add' listing.id %}"><p style = "padding: 10px;" class="btn btn-success" >Add to Watchlist</p></a>
+    {% endif %}
+    {% if  bidding == True %}
+    {% if bid_flag == True %}
+    <div class="alert alert-success" role="alert">
+      Bid placed! Successfully 
+    </div>
+    {% else %}
+    <div class="alert alert-warning" role="alert">
+      Bid Should be Higher that the Present Bid    
+    </div>
+    {% endif %}
+    {% endif %}
+    <form action = "{% url 'bid' listing.id %}", method = 'post'> 
+      {% csrf_token %}
+      <div class="form-group">
+          <input style = "padding: 10px;"  class="form-control" autofocus type="number" name="bid" placeholder="Place a Bid">
+      </div>
+  </form>
+<h4 style = "padding: 20px;">Comments </h4> 
+<div class="overflow-scroll" style="max-height: 300px; overflow-y: auto;">
+   
+  {% for comment in comments %}
+      <li class="list-group-item comment-item p-4">
+          <div class="comment-header font-weight-bold mb-2">
+           {{ comment.user }}
+          </div>
+          <div class="comment-body">
+              {{ comment.comment }}
+          </div>
+      </li>
+  {% endfor %}
+</div>
+
+{%if user.is_authenticated %}
+<form  action = "{% url 'comment' listing.id %}", method = 'post'> 
+  {% csrf_token %}
+  <div  class="form-group">
+      <input style = "padding: 10px;"  class="form-control" autofocus type="text" name="comment" placeholder="comment">
+  </div>
+  <input style = "padding: 10px;"  class="btn btn-success btn-primary font-italic" type="submit" value="comment">
+
+</form>
+
+{% endif %}
+{% else %}
+
+<div class="alert alert-info" role="alert">
+    This Bid is Closed
+  </div>
+  {% if last_bidder %}
+  <div class="alert alert-success" role="alert">
+    Congrats! you have won this Bid
+  </div>
+
+  {% endif %}
+
+{% endif %}
+ 
+{% endblock %}

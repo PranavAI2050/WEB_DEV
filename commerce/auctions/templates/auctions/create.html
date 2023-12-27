@@ -1,0 +1,30 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+{% if message_listing %}
+<div class="alert alert-success" role="alert">
+    {{message_listing}}
+  </div>
+  {% endif %}
+<h3 style = "padding:10px"> Create Your Listing Here By Filling The Info</h3>
+<form  action = "{% url 'create' %}", method = 'post'> 
+    {% csrf_token %}
+    <div class="form-group">
+        <input class="form-control" autofocus type="text" name="title" placeholder="title">
+    </div>
+    <div class="form-group">
+        <input class="form-control" autofocus type="text" name="description" placeholder="description">
+    </div>
+    <div class="form-group">
+        <input class="form-control" autofocus type="number" name="starting bid" placeholder="starting bid">
+    </div>
+    <div class="form-group">
+        <input class="form-control" autofocus type="text" name="image url" placeholder="image url" required = false>
+    </div>
+    <div class="form-group">
+        <input class="form-control" autofocus type="text" name="categorie" placeholder="categorie">
+    </div>
+    <input  class="btn btn-success font-italic" type="submit" value="Create">
+
+</form>
+{% endblock %}

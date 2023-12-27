@@ -1,0 +1,63 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+{% if user.is_authenticated and not watching %}
+{% endif %}
+{% if not watching %}
+<h3 style = "padding: 10px;">Active Listings</h3>
+<hr>
+{% endif %}
+{% if message_cat %}
+<div class="alert alert-info" role="alert">
+    {{message_cat}}
+  </div>
+{% endif %}
+
+{% if message_close %}
+<div class="alert alert-info" role="alert">
+    {{message_close}}
+  </div>
+{% endif %}
+{% if log_message %}
+<div class="alert alert-info" role="alert">
+    {{log_message}}
+  </div>
+{% endif %}
+<div class="container">
+    {% for listing in listings %}
+        {% if True %}
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <img class="img-fluid" src="{{ listing.image }}" alt="{{ listing.title }}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ listing.title }}</h5>
+                            <p class="card-text">{{ listing.description }}</p>
+                            <p class="card-text">{{ listing.bids }}</p>
+                        </div>
+                        <div class="card-body">
+                            {% for bid in listing.bid.all %}
+                                {% if forloop.last %}
+                                    <p class="card-text">
+                                        <strong>Price: {{ bid.bid }} $</strong>
+                                    </p>
+                                {% endif %}
+                            {% endfor %}
+                            {% if True %}
+                            <a href="{% url 'listing' listing.id %}" >
+                                <p class="card-text">Make a Bid</p>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        <hr>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
